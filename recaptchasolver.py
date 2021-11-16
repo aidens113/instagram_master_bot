@@ -86,8 +86,8 @@ def screenshot():
 
 def sendcaptcha():
     try:
-
-        headers = {'authorization': "498616f599fe4c5897cf13555dadc37d"}
+        key = "yourkeyhere"
+        headers = {'authorization': key}
         response = requests.post('https://api.assemblyai.com/v2/upload',headers=headers,data=open("output.wav", 'rb'))
         print(response.json())
 
@@ -99,7 +99,7 @@ def sendcaptcha():
         }
 
         headers = {
-            "authorization": "498616f599fe4c5897cf13555dadc37d",
+            "authorization": key,
             "content-type": "application/json"
         }
 
@@ -115,7 +115,7 @@ def sendcaptcha():
             endpoint = "https://api.assemblyai.com/v2/transcript/"+str(response.json()['id'])
 
             headers = {
-                "authorization": "498616f599fe4c5897cf13555dadc37d",
+                "authorization": key,
             }
             
             response = requests.get(endpoint, headers=headers)
@@ -142,22 +142,8 @@ def sendcaptcha():
         time.sleep(0.5)
         pyautogui.click()
         
-        #f = open('recaptcha.png', 'rb')
-        #imgdata = f.read()
-        #f.close()
-
-        #img = base64.b64encode(imgdata)
-        #previousid = ''
-        #if "None" not in myid:
-            #previousid = 'previousID'myid
-
-        #print("PreviousID found. Continuing captcha")
-        #postdata = {'key':'3fd94090a145df3bd4889a46ecfebbf6','method':'post','coordinatescaptcha':'1','canvas':'1',previousid,'textinstructions':'Follow captcha instructions.'}
         
-        #response = requests.post('http://2captcha.com/in.php', data=postdata, files={'file':open('recaptcha.png','rb')})
-        #myid = response.text.strip()
-        #print("Myid: "+str(myid))
-        #return myid
+       
     except Exception as ee:
         print("Error with sendcaptcha: "+str(ee))
         time.sleep(10)
@@ -165,7 +151,8 @@ def sendcaptcha():
 def completecaptcha():
     while True:
         try:
-            postdata = {'key':'3fd94090a145df3bd4889a46ecfebbf6','action':'get','id':myid}
+            key = "2captchakey"
+            postdata = {'key':key,'action':'get','id':myid}
             response.text = requests.post('http://2captcha.com/in.php', data=postdata)
             if "canvas" in response.text:
                 coords = response.text.split("canvas")[1].split(",")
