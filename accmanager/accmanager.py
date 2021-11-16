@@ -608,16 +608,15 @@ def initdriver(proxy):
     chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
     chrome_options.add_experimental_option('useAutomationExtension', False)
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-    # chrome_options.add_argument('--user-data-dir=C:\\Users\\exoti\\AppData\\Local\\Google\\Chrome\\User Data\\')
-    #chrome_options.add_argument("--load-extension=C:\\Users\\exoti\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\hapgiopokcmcnjmakciaeaocceodcjdn\\6.4_0")
+
     #chrome_options.add_argument(str('--profile-directory=Default'))
     #chrome_options.add_argument("--start-maximized")
     #chrome_options.add_argument(str('--proxy-server=http://'+str(proxy)))
     proxyauth_plugin_path = create_proxyauth_extension(
-    proxy_host=str(str(proxy.split(":")[0]).strip().replace("\n","")),  #"51.161.115.64",
+    proxy_host=str(str(proxy.split(":")[0]).strip().replace("\n","")), 
     proxy_port=str(str(proxy.split(":")[1]).strip().replace("\n","")),#80,
     proxy_username=str(str(proxy.split(":")[2]).strip().replace("\n","")),#"country-ca",
-    proxy_password=str(str(proxy.split(":")[3]).strip().replace("\n","")),#"ead2795d-a80d-4ea0-b686-c08f23894210",
+    proxy_password=str(str(proxy.split(":")[3]).strip().replace("\n","")),
     scheme='http'
     )
     chrome_options.add_extension(proxyauth_plugin_path)
@@ -634,8 +633,7 @@ file.close()
 
 while True:
     categories = ['meme', 'travel', 'luxury', 'health']
-    allproxies = ['2.56.186.2:12323:bobiscool113:acchavenbotfarm','2.56.186.3:12323:bobiscool113:acchavenbotfarm','2.56.186.4:12323:bobiscool113:acchavenbotfarm','2.56.186.5:12323:bobiscool113:acchavenbotfarm','2.56.186.6:12323:bobiscool113:acchavenbotfarm','2.56.186.170:12323:bobiscool113:acchavenbotfarm','2.56.186.187:12323:bobiscool113:acchavenbotfarm','2.56.186.235:12323:bobiscool113:acchavenbotfarm','2.56.186.236:12323:bobiscool113:acchavenbotfarm','2.56.186.237:12323:bobiscool113:acchavenbotfarm','2.56.186.238:12323:bobiscool113:acchavenbotfarm','2.56.186.239:12323:bobiscool113:acchavenbotfarm','2.56.186.240:12323:bobiscool113:acchavenbotfarm','2.56.186.241:12323:bobiscool113:acchavenbotfarm','2.56.186.242:12323:bobiscool113:acchavenbotfarm','2.56.186.243:12323:bobiscool113:acchavenbotfarm','2.56.186.244:12323:bobiscool113:acchavenbotfarm','2.56.186.246:12323:bobiscool113:acchavenbotfarm','2.56.186.247:12323:bobiscool113:acchavenbotfarm']
-
+    allproxies = ['listofproxieshere']
     thist = 0
     for acc in accounts:
         driver = initdriver(allproxies[thist])
