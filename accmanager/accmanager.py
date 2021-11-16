@@ -634,7 +634,7 @@ file.close()
 
 while True:
     categories = ['meme', 'travel', 'luxury', 'health']
-    allproxies = ['2.56.186.2:12323:bobiscool113:acchavenbotfarm','2.56.186.3:12323:bobiscool113:acchavenbotfarm','2.56.186.4:12323:bobiscool113:acchavenbotfarm','2.56.186.5:12323:bobiscool113:acchavenbotfarm','2.56.186.6:12323:bobiscool113:acchavenbotfarm','2.56.186.170:12323:bobiscool113:acchavenbotfarm','2.56.186.187:12323:bobiscool113:acchavenbotfarm','2.56.186.235:12323:bobiscool113:acchavenbotfarm','2.56.186.236:12323:bobiscool113:acchavenbotfarm','2.56.186.237:12323:bobiscool113:acchavenbotfarm','2.56.186.238:12323:bobiscool113:acchavenbotfarm','2.56.186.239:12323:bobiscool113:acchavenbotfarm','2.56.186.240:12323:bobiscool113:acchavenbotfarm','2.56.186.241:12323:bobiscool113:acchavenbotfarm','2.56.186.242:12323:bobiscool113:acchavenbotfarm','2.56.186.243:12323:bobiscool113:acchavenbotfarm','2.56.186.244:12323:bobiscool113:acchavenbotfarm','2.56.186.246:12323:bobiscool113:acchavenbotfarm','2.56.186.247:12323:bobiscool113:acchavenbotfarm']
+    allproxies = ["proxielisthere"]
 
     thist = 0
     for acc in accounts:
