@@ -290,7 +290,7 @@ def getmynumber(token):
 
 
 def recaptcha():
-    
+    key = "3fd94090a145df3bd4889a46ecfebbf6"
     #header1 = {
         #'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         #'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)',
@@ -310,13 +310,13 @@ def recaptcha():
     #print("Captcha token for 2captcha: "+str(captchatoken))
 
     
-    response = requests.get('http://2captcha.com/in.php?key=3fd94090a145df3bd4889a46ecfebbf6&method=userrecaptcha&googlekey=6Lf9nMEUAAAAAHAX2fJIJiQJkXp7IwjUiJsnrvWw&pageurl=http://events.nextplus.me/recaptcha/humantn.html')
+    response = requests.get(str('http://2captcha.com/in.php?key='+str(key)+'&method=userrecaptcha&googlekey=6Lf9nMEUAAAAAHAX2fJIJiQJkXp7IwjUiJsnrvWw&pageurl=http://events.nextplus.me/recaptcha/humantn.html'))
     print(response.text)
     myid =str(response.text.split("|")[1])
 
 
     while True:
-        response = requests.get(str('http://2captcha.com/res.php?key=3fd94090a145df3bd4889a46ecfebbf6&action=get&id='+str(myid)+'&json=1'))
+        response = requests.get(str('http://2captcha.com/res.php?key='+str(key)+'&action=get&id='+str(myid)+'&json=1'))
         if "READY" not in response.text:
             break
         
