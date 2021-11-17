@@ -290,26 +290,7 @@ def getmynumber(token):
 
 
 def recaptcha():
-    key = "3fd94090a145df3bd4889a46ecfebbf6"
-    #header1 = {
-        #'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        #'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)',
-        #'Accept-Language':'en-ca',
-        #'Accept-Encoding':'gzip, deflate, br',
-        #'referer':'http://events.nextplus.me/recaptcha/humantn.html'
-    #}
-    
-    #url = str("https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Lf9nMEUAAAAAHAX2fJIJiQJkXp7IwjUiJsnrvWw&co=aHR0cDovL2V2ZW50cy5uZXh0cGx1cy5tZTo4MA..&hl=en&v=9qx0v7NiOAe_XnW_ULNZm9e3&size=normal&cb=37cgcvmhbo69")
-   ## print("URL: "+str(url))
-    #response = requests.get(url, headers=header1)
-    #print(response)
-
-    #captchatoken = response.text.split('recaptcha-token" value="')[1]
-    #captchatoken = captchatoken.split('">')[0]
-    #captchatoken = captchatoken.strip()
-    #print("Captcha token for 2captcha: "+str(captchatoken))
-
-    
+    key = "2captchakeyhere"
     response = requests.get(str('http://2captcha.com/in.php?key='+str(key)+'&method=userrecaptcha&googlekey=6Lf9nMEUAAAAAHAX2fJIJiQJkXp7IwjUiJsnrvWw&pageurl=http://events.nextplus.me/recaptcha/humantn.html'))
     print(response.text)
     myid =str(response.text.split("|")[1])
