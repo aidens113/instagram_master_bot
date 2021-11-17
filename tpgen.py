@@ -100,8 +100,8 @@ def register(gsntoken):
         #ff808181791d08160179340df2813631 # one used
         print("URL: "+str(url))
         proxies =   {
-            'https' : 'http://country-ca:ead2795d-a80d-4ea0-b686-c08f23894210@51.161.115.64:80',
-            'http' : 'http://country-ca:ead2795d-a80d-4ea0-b686-c08f23894210@51.161.115.64:80'
+            'https' : "proxyhere",
+            'http' : "proxyhere"
                     } 
         response = requests.post(url, headers=header1, json=jsondata, proxies=proxies)
         print(response)
