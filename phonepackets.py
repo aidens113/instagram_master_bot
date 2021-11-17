@@ -29,8 +29,7 @@ mac = str(str(random.randint(0,9))+'BD87DF'+str(random.randint(0,9))+'-'+str(ran
 #user ="Hewef"+str(random.randint(1111,9999))+"onlololol"
 #passw = str("Jim"+str(random.randint(1111,9999))+"fl$$!!$!$!$2323")
 
-user = "xnfnlll2-1"
-passw = "bjoyyejbhj7$!!"
+
 
 print("mac: "+mac)
 #1
@@ -228,32 +227,15 @@ def getmynumber(token):
 
 def recaptcha():
     
-    #header1 = {
-        #'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        #'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)',
-        #'Accept-Language':'en-ca',
-        #'Accept-Encoding':'gzip, deflate, br',
-        #'referer':'http://events.nextplus.me/recaptcha/humantn.html'
-    #}
-    
-    #url = str("https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Lf9nMEUAAAAAHAX2fJIJiQJkXp7IwjUiJsnrvWw&co=aHR0cDovL2V2ZW50cy5uZXh0cGx1cy5tZTo4MA..&hl=en&v=9qx0v7NiOAe_XnW_ULNZm9e3&size=normal&cb=37cgcvmhbo69")
-   ## print("URL: "+str(url))
-    #response = requests.get(url, headers=header1)
-    #print(response)
-
-    #captchatoken = response.text.split('recaptcha-token" value="')[1]
-    #captchatoken = captchatoken.split('">')[0]
-    #captchatoken = captchatoken.strip()
-    #print("Captcha token for 2captcha: "+str(captchatoken))
-
-    
-    response = requests.get('http://2captcha.com/in.php?key=3fd94090a145df3bd4889a46ecfebbf6&method=userrecaptcha&googlekey=6Lf9nMEUAAAAAHAX2fJIJiQJkXp7IwjUiJsnrvWw&pageurl=http://events.nextplus.me/recaptcha/humantn.html')
+  
+    key = "2captchakeyhere"
+    response = requests.get(str('http://2captcha.com/in.php?key='+str(key)+'&method=userrecaptcha&googlekey=6Lf9nMEUAAAAAHAX2fJIJiQJkXp7IwjUiJsnrvWw&pageurl=http://events.nextplus.me/recaptcha/humantn.html'))
     print(response.text)
     myid =str(response.text.split("|")[1])
 
 
     while True:
-        response = requests.get(str('http://2captcha.com/res.php?key=3fd94090a145df3bd4889a46ecfebbf6&action=get&id='+str(myid)+'&json=1'))
+        response = requests.get(str('http://2captcha.com/res.php?key='+str(key)+'&action=get&id='+str(myid)+'&json=1'))
         if "READY" not in response.text:
             break
         
@@ -512,8 +494,8 @@ def register(gsntoken):
         #ff808181791d08160179340df2813631 # one used
         print("URL: "+str(url))
         proxies =   {
-            'https' : 'http://country-ca:ead2795d-a80d-4ea0-b686-c08f23894210@51.161.115.64:80',
-            'http' : 'http://country-ca:ead2795d-a80d-4ea0-b686-c08f23894210@51.161.115.64:80'
+            'https' : 'proxyhere',
+            'http' : 'proxyhere'
                     } 
         response = requests.post(url, headers=header1, json=jsondata, proxies=proxies)
         print(response)
@@ -533,16 +515,9 @@ def register(gsntoken):
     
 
 
-
-    
-
-user = "lyvhuep9-1"
-passw = "bqyefayakb9$!!"
-
-
 #username, password = register()
 #print("Got account: "+str(username)+":"+str(password))
-#print(xregandroid("sdlkfjkfjklsdfklj","8618241f4a4a8d8a"))
+
 token = getticket(user,passw)
 userpath = getpersonafornumber(token)
 #getnumbers(token)
