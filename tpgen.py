@@ -125,7 +125,7 @@ def register(gsntoken):
 
 while True:
     try:
-        response = requests.get("http://accounthaven.net/gsntokens.txt", headers={"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"}, verify=False, timeout=5)
+        response = requests.get("censored", headers={"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"}, verify=False, timeout=5)
         if "none" not in response.text:
             gsntoken = response.text
             gsntoken = str(gsntoken.strip().replace("\n","").replace("\r",""))
@@ -136,7 +136,7 @@ while True:
                 file= open("textplusaccs.txt", "a")
                 file.write(str(username+":"+password+"\n"))
                 file.close()                
-            requests.get("http://accounthaven.net/addgsntoken.php?token=none", headers={"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"}, verify=False, timeout=5)
+            requests.get("censored", headers={"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"}, verify=False, timeout=5)
             print("Reset token")            
     except Exception as EE:
         print("Error: "+str(EE))
