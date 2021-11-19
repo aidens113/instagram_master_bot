@@ -10,11 +10,10 @@ import pyautogui
 #header1 = {
 #    'Host':'xmpp.prd.gii.me:443',
 #    'Sec-WebSocket-Protocol':'xmpp',
-#    'Sec-WebSocket-Key':'I/2Slym3PZm3ObNznO3dBQ==',
 #    'Sec-WebSocket-Version':'13',
 #    'Upgrade':'websocket',
 #    'Origin':'https://xmpp.prd.gii.me',
-#    'Authorization':'Basic KG51bGwpOihudWxsKQ==',
+#    'Authorization':'Basic 
 #    'Connection':'Upgrade'
 #}
 
@@ -443,7 +442,7 @@ def register(gsntoken):
         
         udid = str("8"+str(random.randint(111111, 999999))+"g"+str(random.randint(0,9))+"a4a8d8a")
 
-        #udid = "c0575264c704f9c6"
+        #udid = 
         
         xregtoken = xregandroid(username, udid)
         
